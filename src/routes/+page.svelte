@@ -1,7 +1,7 @@
 <script>
 	import Nav from "../components/Nav.svelte"
-	import TextArea from "../components/TextArea.svelte"
 	import TextDisplay from "../components/TextDisplay.svelte"
+	import TextTyped from "../components/TextTyped.svelte"
 </script>
 
 <Nav />
@@ -9,12 +9,12 @@
 	<div
 		class="absolute top-0 left-7 flex flex-none h-[60vh] justify-center items-center"
 	>
-		<TextArea />
+		<TextDisplay />
 	</div>
 	<div
 		class="absolute -top-[1.1rem] left-7 flex flex-none h-[60vh] justify-center items-center"
 	>
-		<TextDisplay />
+		<TextTyped />
 	</div>
 </div>
 
