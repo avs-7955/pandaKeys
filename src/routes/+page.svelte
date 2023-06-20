@@ -1,11 +1,21 @@
 <script>
 	import Nav from "../components/Nav.svelte"
 	import TextArea from "../components/TextArea.svelte"
+	import TextDisplay from "../components/TextDisplay.svelte"
 </script>
 
 <Nav />
-<div class="flex flex-none h-[60vh] justify-center items-center">
-	<TextArea />
+<div class="relative">
+	<div
+		class="absolute top-0 left-7 flex flex-none h-[60vh] justify-center items-center"
+	>
+		<TextArea />
+	</div>
+	<div
+		class="absolute -top-[1.1rem] left-7 flex flex-none h-[60vh] justify-center items-center"
+	>
+		<TextDisplay />
+	</div>
 </div>
 
 <style lang="postcss">
