@@ -9,6 +9,7 @@ export default {
 				yellowAccent: "#e2b714",
 				caretColor: "#e2b714",
 				errorColor: "#ca4754",
+				textColor: "#d1d0c5",
 			},
 			fontFamily: {
 				body: ["Roboto Mono"],

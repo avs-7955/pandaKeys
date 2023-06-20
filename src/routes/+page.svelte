@@ -1,16 +1,19 @@
 <script>
+	import Nav from "../components/Nav.svelte"
+	import TextArea from "../components/TextArea.svelte"
 </script>
 
-<h1 class="text-3xl font-bold text-yellowAccent">
-    hello
-</h1>
+<Nav />
+<div class="flex flex-none h-[60vh] justify-center items-center">
+	<TextArea />
+</div>
 
 <style lang="postcss">
-    :global(html) {
-    background-color: #1E1E1E;
-    scrollbar-color:#646669 transparent;
-    scrollbar-width:thin;
-    overflow-y:scroll;
-    scroll-behavior:smooth;
-    }
+	:global(html) {
+		background-color: #323437;
+		scrollbar-color: #646669 transparent;
+		scrollbar-width: thin;
+		overflow-y: scroll;
+		scroll-behavior: smooth;
+	}
 </style>
