@@ -1,10 +1,15 @@
 <script>
 	export let text
+	let value = ""
+	let inputRef
 	let words = text.split(" ")
 	console.log(words)
+	const handleClick = () => {
+		inputRef.focus()
+	}
 </script>
 
-<section>
+<section on:click={handleClick} on:keypress={handleClick}>
 	<!-- container -->
 	<div class="container mx-auto lg:w-[90%] pt-3 overflow-hidden relative">
 		<div
@@ -22,6 +27,17 @@
 				</div>
 			{/each}
 		</div>
+		<input
+			autocapitalize="none"
+			autocomplete="off"
+			autocorrect="off"
+			spellcheck="false"
+			tabindex="0"
+			bind:value
+			bind:this={inputRef}
+			autofocus
+			class="left-0 top-1 absolute bg-transparent cursor-default pointer-events-none outline-none text-transparent"
+		/>
 	</div>
 
 	<!-- refresh icon -->
@@ -32,7 +48,9 @@
 			refresh
 		</span>
 	</div>
+	{value}
 </section>
+
 <!-- top -> 16px - 44px -->
 <!-- left -> 04px - 16px -->
 
