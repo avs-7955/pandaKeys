@@ -14,6 +14,16 @@ export default {
 			fontFamily: {
 				body: ["Roboto Mono"],
 			},
+			keyframes: {
+				flash: {
+					"25%, 40%": { opacity: "0" },
+					"50%": { opacity: "1" },
+					"80%": { opacity: "0" },
+				},
+			},
+			animation: {
+				flash: "flash 2.5s infinite",
+			},
 		},
 	},
 	plugins: [],
