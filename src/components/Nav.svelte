@@ -46,7 +46,9 @@
 			</div>
 			<!-- Text -->
 			<div class="text relative text-textColor text-[2rem]/[2.2rem]">
-				<div class="text-lightGrey absolute -top-1 text-xs/[0.65rem]">
+				<div
+					class="text-lightGrey absolute -top-1 text-xs/[0.65rem] hover:text-textColor"
+				>
 					monkey see
 				</div>
 				monkeytype
@@ -56,7 +58,7 @@
 		<div class="flex gap-4 mt-2 align-middle">
 			<a href="/">
 				<span
-					class="text-lightGrey material-symbols-outlined cursor-pointer"
+					class="text-lightGrey material-symbols-outlined cursor-pointer hover:text-textColor"
 				>
 					notifications
 				</span></a
@@ -64,7 +66,7 @@
 
 			<a href="/">
 				<span
-					class="text-lightGrey material-symbols-outlined cursor-pointer"
+					class="text-lightGrey material-symbols-outlined cursor-pointer hover:text-textColor"
 				>
 					person
 				</span>

@@ -52,7 +52,7 @@
 	<!-- refresh icon -->
 	<div class="flex justify-center mt-3">
 		<span
-			class=" material-symbols-outlined text-lightGrey mx-auto cursor-pointer"
+			class=" material-symbols-outlined text-lightGrey mx-auto cursor-pointer hover:text-textColor"
 		>
 			refresh
 		</span>
