@@ -1,5 +1,7 @@
 <script>
 	export let text
+	let words = text.split(" ")
+	console.log(words)
 </script>
 
 <section>
@@ -7,12 +9,18 @@
 	<div class="container mx-auto lg:w-[90%] pt-3 overflow-hidden relative">
 		<div
 			id="caret"
-			class="bg-caretColor absolute top-1.2 left-0 w-[0.1em] h-8 transition animate-flash"
+			class="bg-caretColor absolute top-[16px] left-[4px] w-[0.1em] h-8 transition animate-flash"
 		/>
 		<div
-			class="text text-2xl tracking-wider h-48 text-lightGrey select-none"
+			class="text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap"
 		>
-			{text}
+			{#each words as word}
+				<div class="word m-[.25em]">
+					{#each word as letter}
+						<letter>{letter}</letter>
+					{/each}
+				</div>
+			{/each}
 		</div>
 	</div>
 
@@ -25,12 +33,11 @@
 		</span>
 	</div>
 </section>
+<!-- top -> 16px - 44px -->
+<!-- left -> 04px - 16px -->
 
 <style>
 	.text {
 		font-family: "Roboto Mono", monospace;
 	}
-	/* #caret {
-		transition: ease 1s infinite;
-	} */
 </style>
