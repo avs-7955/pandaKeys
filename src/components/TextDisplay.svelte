@@ -1,31 +1,77 @@
 <script>
+	import { createEventDispatcher } from "svelte"
+	const dispatch = createEventDispatcher()
 	export let text
+	export let timer
 	let value = ""
-	let inputRef, input_words
+	let begin = false
+	let inputRef,
+		correct = 0,
+		incorrect = 0
+	let minutes = 0,
+		seconds = 0
 	let text_container
+	let screen_text = 0
 	let caret_pos_horizontal = 0
 	let caret_pos_vertical = 16
 	let words = text.split("")
+
 	// to make sure input field always in focus
 	const handleClick = () => {
 		inputRef.focus()
 	}
 
 	const handleCaret = () => {
-		// input_words = value.split(" ")
-		// console.log(input_words)
+		if (begin == false) {
+			begin = true
+			handleTimer()
+		}
 		let letters_in_one_line = text_container.clientWidth / 15.62 - 1
+		screen_text = Math.ceil(letters_in_one_line * 4)
+		// console.log(screen_text)
 		let caret_pos = value.length
 		caret_pos_horizontal =
 			Math.floor(caret_pos % letters_in_one_line) * 15.6
 		caret_pos_vertical =
 			16 + Math.floor(caret_pos / letters_in_one_line) * 44
+
+		// for end result
+		if (value.length == screen_text) {
+			for (let i = 0; i < value.length; i++) {
+				if (text[i] == value[i]) correct += 1
+				else incorrect += 1
+			}
+			dispatch("results", {
+				correct: correct,
+				incorrect: incorrect,
+			})
+			// console.log("Correct" + correct)
+			// console.log("Incorrect" + incorrect)
+		}
 	}
-	// const handleCaret = () => {}
+
+	// for timer
+	const handleTimer = () => {
+		console.log("I have started")
+	}
 </script>
 
 <section on:click={handleClick} on:keypress={handleClick}>
-	<!-- container -->
+	<!-- timer container -->
+	<div class="container mx-auto w-[90%] pt-3">
+		<div class="timer-value text-2xl text-yellowAccent">
+			{#if begin == true}
+				{#if seconds > 9}
+					<span>{minutes}:{seconds}</span>
+				{:else}
+					<span>{minutes}:0{seconds}</span>
+				{/if}
+			{:else if timer == 30}
+				<span>0:{timer}</span>
+			{/if}
+		</div>
+	</div>
+	<!-- text container -->
 	<div class="container mx-auto w-[90%] pt-3 overflow-hidden relative">
 		<div
 			id="caret"
@@ -38,15 +84,11 @@
 		>
 			{#if value.length == 0}
 				{#each words as letter}
-					<!-- <div class="word my-[.25em] mx-[7.805px]"> -->
-					<!-- {#each word as letter} -->
 					{#if letter == " "}
 						<letter class="my-[.25em]">&nbsp</letter>
 					{:else}
 						<letter class="my-[.25em]">{letter}</letter>
 					{/if}
-					<!-- {/each} -->
-					<!-- </div> -->
 				{/each}
 			{:else}
 				{#each words as letter, index}
@@ -64,6 +106,7 @@
 				{/each}
 			{/if}
 		</div>
+		<!-- svelte-ignore a11y-autofocus -->
 		<input
 			autocapitalize="none"
 			autocomplete="off"
@@ -102,9 +145,6 @@
 						{/each}
 					</div>
 				{/each} -->
-
-<!-- top -> 16px - 44px -->
-<!-- left -> 04px - 16px -->
 
 <style>
 	.text {
