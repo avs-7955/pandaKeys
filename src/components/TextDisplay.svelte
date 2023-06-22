@@ -52,13 +52,11 @@
 				{#each words as letter, index}
 					{#if letter == " "}
 						<letter class="my-[.25em]">&nbsp</letter>
-					{:else if value.length > index && value[index] == letter}
-						<letter class="my-[.25em] text-textColor"
-							>{letter}</letter
-						>
-					{:else if value.length > index && value[index] != letter}
-						<letter class="my-[.25em] text-errorColor"
-							>{letter}</letter
+					{:else if value.length > index}
+						<letter
+							class={value[index] == letter
+								? "my-[.25em] text-textColor"
+								: "my-[.25em] text-errorColor"}>{letter}</letter
 						>
 					{:else}
 						<letter class="my-[.25em]">{letter}</letter>
