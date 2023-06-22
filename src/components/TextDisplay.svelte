@@ -3,9 +3,9 @@
 	let value = ""
 	let inputRef, input_words
 	let text_container
-	let caret_pos_horizontal = 4
+	let caret_pos_horizontal = 0
 	let caret_pos_vertical = 16
-	let words = text.split(" ")
+	let words = text.split("")
 	// to make sure input field always in focus
 	const handleClick = () => {
 		inputRef.focus()
@@ -13,20 +13,20 @@
 
 	const handleCaret = () => {
 		// input_words = value.split(" ")
-		console.log(input_words)
-		let letters_in_one_line = text_container.clientWidth / 15.62
+		// console.log(input_words)
+		let letters_in_one_line = text_container.clientWidth / 15.62 - 1
 		let caret_pos = value.length
 		caret_pos_horizontal =
-			4 + Math.floor(caret_pos % letters_in_one_line) * 16
+			Math.floor(caret_pos % letters_in_one_line) * 15.6
 		caret_pos_vertical =
-			16 + Math.floor(caret_pos / letters_in_one_line) * 48
+			16 + Math.floor(caret_pos / letters_in_one_line) * 44
 	}
 	// const handleCaret = () => {}
 </script>
 
 <section on:click={handleClick} on:keypress={handleClick}>
 	<!-- container -->
-	<div class="container mx-auto lg:w-[90%] pt-3 overflow-hidden relative">
+	<div class="container mx-auto w-[90%] pt-3 overflow-hidden relative">
 		<div
 			id="caret"
 			class="bg-caretColor absolute w-[0.15em] h-8 transition animate-flash"
@@ -36,28 +36,30 @@
 			class="text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"
 			bind:this={text_container}
 		>
-			{#if value.length > -1}
-				{#each words as word}
-					<div class="word my-[.25em] mx-[7.805px]">
-						{#each word as letter}
-							<letter>{letter}</letter>
-						{/each}
-					</div>
+			{#if value.length == 0}
+				{#each words as letter}
+					<!-- <div class="word my-[.25em] mx-[7.805px]"> -->
+					<!-- {#each word as letter} -->
+					{#if letter == " "}
+						<letter class="my-[.25em]">&nbsp</letter>
+					{:else}
+						<letter class="my-[.25em]">{letter}</letter>
+					{/if}
+					<!-- {/each} -->
+					<!-- </div> -->
 				{/each}
-				<!-- {:else}
-				{#each words as word, w_index}
-					<div class="word my-[.25em] mx-[7.805px]">
-						{#each word as letter, l_index}
-							{#if input_words.length >= w_index && l_index < value[w_index].length - 1 && value[w_index][l_index] == letter}
-								<letter class="correct">{letter}</letter>
-							{:else if input_words.length >= w_index && value[w_index][l_index] != letter}
-								<letter class="error">{letter}</letter>
-							{:else}
-								<letter>{letter}</letter>
-							{/if}
-						{/each}
-					</div>
-				{/each} -->
+			{:else}
+				{#each words as letter, index}
+					{#if letter == " "}
+						<letter class="my-[.25em]">&nbsp</letter>
+					{:else if value.length > index && value[index] == letter}
+						<letter class="correct my-[.25em]">{letter}</letter>
+					{:else if value.length > index && value[index] != letter}
+						<letter class="error my-[.25em]">{letter}</letter>
+					{:else}
+						<letter class="my-[.25em]">{letter}</letter>
+					{/if}
+				{/each}
 			{/if}
 		</div>
 		<input
@@ -83,6 +85,21 @@
 		</span>
 	</div>
 </section>
+
+<!-- {:else}
+				{#each words as word, w_index}
+					<div class="word my-[.25em] mx-[7.805px]">
+						{#each word as letter, l_index}
+							{#if input_words.length >= w_index && l_index < value[w_index].length - 1 && value[w_index][l_index] == letter}
+								<letter class="correct">{letter}</letter>
+							{:else if input_words.length >= w_index && value[w_index][l_index] != letter}
+								<letter class="error">{letter}</letter>
+							{:else}
+								<letter>{letter}</letter>
+							{/if}
+						{/each}
+					</div>
+				{/each} -->
 
 <!-- top -> 16px - 44px -->
 <!-- left -> 04px - 16px -->
