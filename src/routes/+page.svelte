@@ -10,10 +10,12 @@
 	let timer = 30 // seconds
 	let correct = 0
 	let incorrect = 0
+	let time_elapsed = 0
 	function handleResults(event) {
 		correct = event.detail.correct
 		incorrect = event.detail.incorrect
-		console.log(`${correct}   ${incorrect}`)
+		time_elapsed = event.detail.time_elapsed
+		console.log(`${correct}   ${incorrect} ${time_elapsed}`)
 	}
 </script>
 
@@ -31,7 +33,7 @@
 	<div class="mb-36" />
 {/if}
 {#if correct > 0}
-	<ResultDisplay {correct} {incorrect} />
+	<ResultDisplay {correct} {incorrect} {time_elapsed} />
 {/if}
 <Footer />
 

@@ -1,8 +1,9 @@
 <script>
-	let wpm = 58
 	export let correct
 	export let incorrect
+	export let time_elapsed
 	let accuracy = Math.round((correct / (correct + incorrect)) * 100)
+	let wpm = Math.round(((correct + incorrect) / 5 / time_elapsed) * 60)
 </script>
 
 <section>

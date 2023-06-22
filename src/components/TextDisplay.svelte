@@ -5,8 +5,8 @@
 	export let timer
 	let value = ""
 	let begin = false
-	let inputRef,
-		correct = 0,
+	let inputRef, start, end
+	let correct = 0,
 		incorrect = 0
 	let minutes = 0,
 		seconds = 0
@@ -41,9 +41,11 @@
 				if (text[i] == value[i]) correct += 1
 				else incorrect += 1
 			}
+			end = new Date()
 			dispatch("results", {
 				correct: correct,
 				incorrect: incorrect,
+				time_elapsed: (end.getTime() - start.getTime()) / 1000,
 			})
 			// console.log("Correct" + correct)
 			// console.log("Incorrect" + incorrect)
@@ -53,6 +55,7 @@
 	// for timer
 	const handleTimer = () => {
 		console.log("I have started")
+		start = new Date()
 	}
 </script>
 
