@@ -4,7 +4,7 @@
 	import Footer from "../components/Footer.svelte"
 	import TextTyped from "../components/TextTyped.svelte"
 	const text =
-		"There are two main categories of monkeys, new world monkeys, and old world monkeys. The new world monkeys are found in the regions of South America and North America, whereas the old world monkeys are found in the Asian countries and the African region.Most of the monkeys are mostly found sleeping while sitting on the trees, balancing on a single branch and resting their bottoms upright on the branch. According to research, the sleepiest species of monkey can sleep for 15-17 hours. The difference between the new world monkey and the old world monkey is that the nose of the new world monkey has a round shape, whereas the nose of the old world monkey has a small curve."
+		"but place point again line general have tell show write there late even again tell both never stand from without might world word home here any where very all in without see same all much large come about think "
 </script>
 
 <Nav />

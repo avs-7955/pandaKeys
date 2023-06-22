@@ -1,5 +1,5 @@
 <script>
-	export let text
+	// export let text
 	let input
 	let inner_html
 
@@ -51,7 +51,7 @@
 	.text {
 		font-family: "Roboto Mono", monospace;
 	}
-	.error {
+	/* .error {
 		color: #ca4754;
-	}
+	} */
 </style>
