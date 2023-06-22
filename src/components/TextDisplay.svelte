@@ -53,9 +53,13 @@
 					{#if letter == " "}
 						<letter class="my-[.25em]">&nbsp</letter>
 					{:else if value.length > index && value[index] == letter}
-						<letter class="correct my-[.25em]">{letter}</letter>
+						<letter class="my-[.25em] text-textColor"
+							>{letter}</letter
+						>
 					{:else if value.length > index && value[index] != letter}
-						<letter class="error my-[.25em]">{letter}</letter>
+						<letter class="my-[.25em] text-errorColor"
+							>{letter}</letter
+						>
 					{:else}
 						<letter class="my-[.25em]">{letter}</letter>
 					{/if}
@@ -107,11 +111,5 @@
 <style>
 	.text {
 		font-family: "Roboto Mono", monospace;
-	}
-	.correct {
-		color: #d1d0c5;
-	}
-	.error {
-		color: #ca4754;
 	}
 </style>
