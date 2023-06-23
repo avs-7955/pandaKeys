@@ -5,11 +5,11 @@
 	export let timer
 	let value = ""
 	let begin = false
-	let inputRef, start, end
+	let inputRef, start, end, now
 	let correct = 0,
 		incorrect = 0
-	let minutes = 0,
-		seconds = 0
+	let seconds = timer
+	let timer_interval
 	let text_container
 	let screen_text = 0
 	let caret_pos_horizontal = 0
@@ -21,6 +21,7 @@
 		inputRef.focus()
 	}
 
+	// to handle the caret position
 	const handleCaret = () => {
 		if (begin == false) {
 			begin = true
@@ -28,7 +29,6 @@
 		}
 		let letters_in_one_line = text_container.clientWidth / 15.62 - 1
 		screen_text = Math.ceil(letters_in_one_line * 4)
-		// console.log(screen_text)
 		let caret_pos = value.length
 		caret_pos_horizontal =
 			Math.floor(caret_pos % letters_in_one_line) * 15.6
@@ -37,25 +37,40 @@
 
 		// for end result
 		if (value.length == screen_text) {
-			for (let i = 0; i < value.length; i++) {
-				if (text[i] == value[i]) correct += 1
-				else incorrect += 1
-			}
-			end = new Date()
-			dispatch("results", {
-				correct: correct,
-				incorrect: incorrect,
-				time_elapsed: (end.getTime() - start.getTime()) / 1000,
-			})
-			// console.log("Correct" + correct)
-			// console.log("Incorrect" + incorrect)
+			dispatchResult()
 		}
 	}
 
+	// function to find the result and send it to the parent
+	const dispatchResult = () => {
+		for (let i = 0; i < value.length; i++) {
+			if (text[i] == value[i]) correct += 1
+			else incorrect += 1
+		}
+		clearInterval(timer_interval)
+		end = new Date()
+		dispatch("results", {
+			correct: correct,
+			incorrect: incorrect,
+			time_elapsed: (end.getTime() - start.getTime()) / 1000,
+		})
+	}
+
+	const updateTimer = () => {
+		// for updating time
+		now = new Date()
+		seconds = timer - Math.round((now.getTime() - start.getTime()) / 1000)
+
+		// if seconds == 0, calling function to dispatch results
+		if (seconds == 0) {
+			dispatchResult()
+		}
+	}
 	// for timer
 	const handleTimer = () => {
 		console.log("I have started")
 		start = new Date()
+		timer_interval = setInterval(updateTimer, 1000)
 	}
 </script>
 
@@ -65,9 +80,9 @@
 		<div class="timer-value text-2xl text-yellowAccent">
 			{#if begin == true}
 				{#if seconds > 9}
-					<span>{minutes}:{seconds}</span>
+					<span>0:{seconds}</span>
 				{:else}
-					<span>{minutes}:0{seconds}</span>
+					<span>0:0{seconds}</span>
 				{/if}
 			{:else if timer == 30}
 				<span>0:{timer}</span>
@@ -126,6 +141,7 @@
 
 	<!-- refresh icon -->
 	<div class="flex justify-center mt-3">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<span
 			class=" material-symbols-outlined text-lightGrey mx-auto cursor-pointer hover:text-textColor"
 		>
