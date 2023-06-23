@@ -72,6 +72,26 @@
 		start = new Date()
 		timer_interval = setInterval(updateTimer, 1000)
 	}
+
+	// to handle reset
+	const handleReset = () => {
+		begin = false
+		value = ""
+		// reseting caret
+		caret_pos_horizontal = 0
+		caret_pos_vertical = 16
+		clearInterval(timer_interval)
+		seconds = timer
+
+		// to remove the result if being displayed
+		correct = 0
+		incorrect = 0
+		dispatch("results", {
+			correct: correct,
+			incorrect: incorrect,
+			time_elapsed: (end.getTime() - start.getTime()) / 1000,
+		})
+	}
 </script>
 
 <section on:click={handleClick} on:keypress={handleClick}>
@@ -144,6 +164,7 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<span
 			class=" material-symbols-outlined text-lightGrey mx-auto cursor-pointer hover:text-textColor"
+			on:click={handleReset}
 		>
 			refresh
 		</span>
