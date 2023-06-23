@@ -3,7 +3,6 @@
 	import TextDisplay from "../components/TextDisplay.svelte"
 	import Footer from "../components/Footer.svelte"
 	import ResultDisplay from "../components/ResultDisplay.svelte"
-	import Timer from "../components/Timer.svelte"
 	import TextTyped from "../components/TextTyped.svelte"
 	const text =
 		"but place point again line general have tell show write there late even again tell both never stand from without might world word home here any where very all in without see same all much large come about think but place point again line general have tell show write there late even again tell both never stand from without might world word home here any where very all in without see same all much large come about think"
