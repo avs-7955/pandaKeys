@@ -1,4 +1,6 @@
 <script>
+	// NOT USED ANYWHERE
+
 	// export let text
 	let input
 	let inner_html

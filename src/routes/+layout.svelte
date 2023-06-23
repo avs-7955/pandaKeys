@@ -3,6 +3,8 @@
 </script>
 
 <svelte:head>
+	<!-- Title -->
+	<title>MonkeyType | Typing Test</title>
 	<!-- For Google UI Icons -->
 	<link
 		rel="stylesheet"
