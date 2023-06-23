@@ -16,7 +16,9 @@
 					/></span
 				>
 			</p>
-			<a href="/" class="hover:text-textColor"
+			<a
+				href="mailto: ayushi.v.sharan@gmail.com"
+				class="hover:text-textColor"
 				><i class="fa-solid fa-envelope" /> Connect with me!</a
 			>
 			<!-- TODO:Add link -->
