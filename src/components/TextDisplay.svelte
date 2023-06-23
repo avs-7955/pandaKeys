@@ -130,14 +130,22 @@
 				{/each}
 			{:else}
 				{#each words as letter, index}
-					{#if letter == " "}
-						<letter class="my-[.25em]">&nbsp</letter>
-					{:else if value.length > index}
+					{#if value.length > index}
+						{#if letter == " "}
+							<letter
+								class={value[index] == letter
+									? "my-[.25em]"
+									: "my-[.25em] border-b-2 border-errorColor"}
+								>&nbsp</letter
+							>
+						{/if}
 						<letter
 							class={value[index] == letter
 								? "my-[.25em] text-textColor"
 								: "my-[.25em] text-errorColor"}>{letter}</letter
 						>
+					{:else if letter == " "}
+						<letter class="my-[.25em]">&nbsp</letter>
 					{:else}
 						<letter class="my-[.25em]">{letter}</letter>
 					{/if}
