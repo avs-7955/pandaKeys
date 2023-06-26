@@ -2,6 +2,16 @@
 
 This website is a clone of MonkeyType, a typing speed test application. It provides basic functionalities where users are presented with a portion of text and they have to type it as quickly and accurately as possible. The website calculates the user's typing speed in words per minute (WPM) and displays their accuracy and other statistics.
 
+<h1 align="center">
+  <img src="https://ik.imagekit.io/pq7opoglh/GitHub_ReadMe/stack_GjMfbKvDP.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1655143763495" width="55" alt="Tech stack" />
+ <br>
+ TechStack</h1>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/tailwindcss-icon.svg" alt="Tailwind CSS" height="60"/>
+  <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/svelte-kit.svg" alt="SvelteKit" height="60"/>
+</div>
+
 # Getting Started
 
 ## Installation
@@ -36,7 +46,7 @@ This website is a clone of MonkeyType, a typing speed test application. It provi
 
 -   When you have finished typing, the website will calculate your typing speed in WPM (words per minute) and display it along with your accuracy and other statistics.
 
--   You can reset the typing test and try again by refreshing the page.
+-   You can reset the typing test and try again by clicking on the refrest button below the text.
 
 # Contributions
 
