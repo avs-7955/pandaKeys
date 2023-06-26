@@ -1,5 +1,15 @@
 <script>
 	import "../app.css"
+	import { tweened } from "svelte/motion"
+	let m = { x: 0, y: 0 }
+	const x_coor = tweened(0)
+	const y_coor = tweened(0)
+	const handleMouseMove = (event) => {
+		m.x = event.clientX
+		m.y = event.clientY
+	}
+	$: x_coor.set(m.x)
+	$: y_coor.set(m.y)
 </script>
 
 <svelte:head>
@@ -27,4 +37,28 @@
 	/>
 </svelte:head>
 
-<slot />
+<div on:mousemove={handleMouseMove}>
+	<div class="circle" style="left:{$x_coor}px; top:{$y_coor}px;" />
+	<slot />
+</div>
+
+<style>
+	.circle {
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		top: 0%;
+		left: 0%;
+		margin: -10px 0 0 -10px;
+		border-radius: 50%;
+		opacity: 0.17;
+		transition: 1s background;
+		animation: 5s ease-in-out infinite;
+		background: radial-gradient(
+			circle at center,
+			#fff 0%,
+			#fff 40%,
+			#000 75%
+		);
+	}
+</style>
