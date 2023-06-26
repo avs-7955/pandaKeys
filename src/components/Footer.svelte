@@ -1,11 +1,16 @@
 <footer>
 	<!-- Container div -->
 	<div class="container mx-auto text-center lg:w-[90%]">
-		<div class="flex text-lightGrey justify-between">
+		<div class="flex text-lightGrey justify-around">
 			<a
 				href="https://github.com/avs-7955/monkeytype-clone"
-				class="hover:text-textColor"
-				><i class="fa-brands fa-github" /> github</a
+				class="hidden md:flex hover:text-textColor"
+				><i class="fa-brands fa-github mt-1 mr-1" /> github</a
+			>
+			<a
+				href="https://github.com/avs-7955/monkeytype-clone"
+				class="flex md:hidden hover:text-textColor"
+				><i class="fa-brands fa-github" /></a
 			>
 			<p>
 				Made using <span
@@ -18,10 +23,14 @@
 			</p>
 			<a
 				href="mailto: ayushi.v.sharan@gmail.com"
-				class="hover:text-textColor"
-				><i class="fa-solid fa-envelope" /> Connect with me!</a
+				class="hidden md:flex hover:text-textColor"
+				><i class="fa-solid fa-envelope mt-1 mr-1" /> Connect with me!</a
 			>
-			<!-- TODO:Add link -->
+			<a
+				href="mailto: ayushi.v.sharan@gmail.com"
+				class="flex md:hidden hover:text-textColor"
+				><i class="fa-solid fa-envelope mt-1 mr-1" /></a
+			>
 		</div>
 	</div>
 </footer>
