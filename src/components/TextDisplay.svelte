@@ -43,7 +43,6 @@
 			begin = true
 			handleTimer()
 		}
-		let end_text
 		if (result != true) {
 			let letters_in_one_line = text_container.clientWidth / 15.62 - 1
 			screen_text = Math.ceil(letters_in_one_line * 4)
@@ -56,10 +55,7 @@
 			// for end result
 			if (value.length == screen_text) {
 				dispatchResult()
-				end_text = value
 			}
-		} else {
-			value = end_text
 		}
 	}
 
