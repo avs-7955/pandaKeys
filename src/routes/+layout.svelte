@@ -45,6 +45,7 @@
 <style>
 	.circle {
 		position: absolute;
+		z-index: -2;
 		width: 25px;
 		height: 25px;
 		top: 0%;
