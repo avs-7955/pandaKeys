@@ -4,7 +4,8 @@
 	export let text
 	export let timer
 	let value = ""
-	let begin = false
+	let begin = false,
+		blur = false
 	let inputRef, start, end, now
 	let correct = 0,
 		incorrect = 0
@@ -18,7 +19,15 @@
 
 	// to make sure input field always in focus
 	const handleClick = () => {
+		blur = false
 		inputRef.focus()
+	}
+
+	// to handle the blur
+	const handleBlur = () => {
+		blur = true
+		console.log("I have been blurred!")
+		handleReset()
 	}
 
 	// to handle the caret position
@@ -43,7 +52,6 @@
 
 	// function to find the result and send it to the parent
 	const dispatchResult = () => {
-		inputRef.blur()
 		for (let i = 0; i < value.length; i++) {
 			if (text[i] == value[i]) correct += 1
 			else incorrect += 1
@@ -95,7 +103,11 @@
 	}
 </script>
 
-<section on:click={handleClick} on:keypress={handleClick}>
+<section
+	on:click={handleClick}
+	on:keypress={handleClick}
+	on:focusout={handleBlur}
+>
 	<!-- timer container -->
 	<div class="container mx-auto w-[90%] pt-3">
 		<div class="timer-value text-2xl text-yellowAccent">
@@ -110,6 +122,16 @@
 			{/if}
 		</div>
 	</div>
+	<div
+		class={blur == false
+			? "hidden"
+			: "container mx-auto w-[90%] pt-3 overflow-hidden relative text-textColor text-xl flex justify-center"}
+	>
+		<span class="material-symbols-outlined text-lg mr-1">
+			arrow_selector_tool
+		</span>
+		Click to start the test!
+	</div>
 	<!-- text container -->
 	<div class="container mx-auto w-[90%] pt-3 overflow-hidden relative">
 		<div
@@ -118,8 +140,9 @@
 			style="top:{caret_pos_vertical}px;left:{caret_pos_horizontal}px;"
 		/>
 		<div
-			class="text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"
-			bind:this={text_container}
+			class={blur == true
+				? "blur-sm text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"
+				: "text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"}
 		>
 			{#if value.length == 0}
 				{#each words as letter}
