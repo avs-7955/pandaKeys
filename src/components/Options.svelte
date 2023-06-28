@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor text-lightGrey"
+	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor text-lightGrey mt-8 md:mt-0"
 >
 	<div class="flex flex-col md:flex-row justify-center gap-2 lg:gap-4">
 		<div class="flex justify-center gap-4">
