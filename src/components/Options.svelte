@@ -3,10 +3,12 @@
 	const dispatch = createEventDispatcher()
 	let active_text = 2
 	let active_time = 30
+	let backSpace = true
 	const optionsDispatch = () => {
 		dispatch("options", {
 			active_text,
 			active_time,
+			backSpace,
 		})
 	}
 </script>
@@ -76,6 +78,21 @@
 					active_time = 60
 					optionsDispatch()
 				}}>60</button
+			>
+		</div>
+		<div class="hidden md:flex bg-lightGrey rounded-full w-[0.3em]" />
+		<div class="flex justify-center gap-4">
+			<button
+				class={backSpace
+					? "text-yellowAccent "
+					: "hover:text-yellowAccent"}
+				on:click={() => {
+					backSpace = !backSpace
+					optionsDispatch()
+				}}
+				><i
+					class="fa-solid fa-delete-left mr-1 text-sm"
+				/>allowed</button
 			>
 		</div>
 	</div>

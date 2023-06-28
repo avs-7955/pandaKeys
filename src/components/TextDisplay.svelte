@@ -3,13 +3,15 @@
 	const dispatch = createEventDispatcher()
 	export let text
 	export let timer
+	export let backSpace
 	let value = ""
 	let begin = false,
 		blur = false,
 		result = false
 	let inputRef, start, end, now
 	let correct = 0,
-		incorrect = 0
+		incorrect = 0,
+		mistakes = 0
 	let seconds = timer
 	let timer_interval
 	let text_container
@@ -38,10 +40,14 @@
 	}
 
 	// to handle the caret position
-	const handleCaret = () => {
+	const handleCaret = (event) => {
 		if (begin == false) {
 			begin = true
 			handleTimer()
+		}
+		if (event.data == null) {
+			mistakes += 1
+			console.log(mistakes)
 		}
 		if (result != true) {
 			let letters_in_one_line = text_container.clientWidth / 15.62 - 1
@@ -69,6 +75,7 @@
 		}
 		clearInterval(timer_interval)
 		end = new Date()
+		if (!backSpace) incorrect += mistakes
 		dispatch("results", {
 			correct: correct,
 			incorrect: incorrect,
@@ -77,7 +84,6 @@
 	}
 
 	const updateTimer = () => {
-		console.log(seconds)
 		// for updating time
 		now = new Date()
 		seconds = timer - Math.round((now.getTime() - start.getTime()) / 1000)

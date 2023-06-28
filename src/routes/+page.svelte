@@ -11,6 +11,7 @@
 	let timer = 30 // seconds
 	let text = words // text
 	let text_opn = 2 // default text
+	let backSpace
 	let correct = 0
 	let incorrect = 0
 	let time_elapsed = 0
@@ -24,7 +25,8 @@
 	const handleOptions = (event) => {
 		text_opn = event.detail.active_text
 		timer = event.detail.active_time
-		console.log(`${text_opn}   ${timer}`)
+		backSpace = event.detail.backSpace
+		console.log(`${text_opn}   ${timer} ${backSpace}`)
 	}
 </script>
 
@@ -32,11 +34,21 @@
 <div class="flex flex-col flex-none h-[60vh] justify-center items-center">
 	<Options on:options={handleOptions} />
 	{#if text_opn == 1}
-		<TextDisplay text={sentences} {timer} on:results={handleResults} />
+		<TextDisplay
+			text={sentences}
+			{timer}
+			{backSpace}
+			on:results={handleResults}
+		/>
 	{:else if text_opn == 3}
-		<TextDisplay text={quotes} {timer} on:results={handleResults} />
+		<TextDisplay
+			text={quotes}
+			{timer}
+			{backSpace}
+			on:results={handleResults}
+		/>
 	{:else}
-		<TextDisplay {text} {timer} on:results={handleResults} />
+		<TextDisplay {text} {timer} {backSpace} on:results={handleResults} />
 	{/if}
 </div>
 {#if correct == 0}
