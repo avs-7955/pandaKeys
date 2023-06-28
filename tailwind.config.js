@@ -10,6 +10,7 @@ export default {
 				caretColor: "#e2b714",
 				errorColor: "#ca4754",
 				textColor: "#d1d0c5",
+				optionsBoxColor: "#2c2e31",
 			},
 			fontFamily: {
 				body: ["Roboto Mono"],

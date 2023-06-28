@@ -77,6 +77,7 @@
 	}
 
 	const updateTimer = () => {
+		console.log(seconds)
 		// for updating time
 		now = new Date()
 		seconds = timer - Math.round((now.getTime() - start.getTime()) / 1000)
@@ -90,6 +91,7 @@
 	const handleTimer = () => {
 		console.log("I have started")
 		start = new Date()
+		seconds = timer
 		timer_interval = setInterval(updateTimer, 1000)
 	}
 
@@ -110,7 +112,7 @@
 		dispatch("results", {
 			correct: correct,
 			incorrect: incorrect,
-			time_elapsed: (end.getTime() - start.getTime()) / 1000,
+			time_elapsed: 0,
 		})
 	}
 </script>
@@ -129,7 +131,11 @@
 				{:else}
 					<span>0:0{seconds}</span>
 				{/if}
+			{:else if timer == 15}
+				<span>0:{timer}</span>
 			{:else if timer == 30}
+				<span>0:{timer}</span>
+			{:else if timer == 60}
 				<span>0:{timer}</span>
 			{/if}
 		</div>
