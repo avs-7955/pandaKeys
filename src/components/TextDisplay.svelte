@@ -149,7 +149,7 @@
 	<div
 		class={blur == false || result == true
 			? "hidden"
-			: "container mx-auto w-[90%] pt-3 overflow-hidden relative text-textColor text-xl flex justify-center"}
+			: "container mx-auto w-[90%] overflow-hidden text-textColor text-xl flex justify-center mt-[5.2rem] -mb-28 tracking-wider"}
 	>
 		<span class="material-symbols-outlined text-lg mr-1">
 			arrow_selector_tool
