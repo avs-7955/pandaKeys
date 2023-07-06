@@ -1,6 +1,8 @@
-# MonkeyType Clone
+# PandaKeys | Speed Typing Test
 
-This website is a clone of MonkeyType, a typing speed test application. It provides basic functionalities where users are presented with a portion of text and they have to type it as quickly and accurately as possible. The website calculates the user's typing speed in words per minute (WPM) and displays their accuracy and other statistics.
+The website is a typing speed test application which takes its inspiration from monkeyType. It provides basic functionalities where users are presented with a portion of text and they have to type it as quickly and accurately as possible. The website calculates the user's typing speed in words per minute (WPM) and displays their accuracy and other statistics.
+<br>
+There are various options to modify the time and text for the test.
 
 <h1 align="center">
   <img src="https://ik.imagekit.io/pq7opoglh/GitHub_ReadMe/stack_GjMfbKvDP.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1655143763495" width="55" alt="Tech stack" />
