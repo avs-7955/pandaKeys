@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor text-lightGrey mt-8 md:mt-0"
+	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor/[0.7] text-lightGrey mt-8 md:mt-0"
 >
 	<div class="flex flex-col md:flex-row justify-center gap-2 lg:gap-4">
 		<div class="flex justify-center gap-4">
@@ -50,7 +50,9 @@
 		</div>
 		<div class="hidden md:flex bg-lightGrey rounded-full w-[0.3em]" />
 		<div class="flex justify-center gap-4">
-			<span> <i class="fa-solid fa-clock text-sm mr-1" />time</span>
+			<span class="cursor-default">
+				<i class="fa-solid fa-clock text-sm mr-1" />time</span
+			>
 
 			<button
 				class={active_time == 15
