@@ -40,7 +40,7 @@ There are various options to modify the time and text for the test.
 
 # Usage
 
--   Once the development server is running, you can access the MonkeyType Clone website by opening a web browser and navigating to the provided URL or localhost.
+-   Once the development server is running, you can access the PandaKeys website by opening a web browser and navigating to the provided URL or localhost.
 
 -   The website will present you with a portion of text to type.
 
