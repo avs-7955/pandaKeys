@@ -28,7 +28,7 @@ jobs:
 
             - name: build
               env:
-                  BASE_PATH: "/monkeytype-clone"
+                  BASE_PATH: "/pandaKeys"
               run: |
                   npm run build
                   touch build/.nojekyll

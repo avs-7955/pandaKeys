@@ -17,7 +17,7 @@ const config = {
 			fallback: "index.html",
 		}),
 		paths: {
-			base: dev ? "" : "/monkeytype-clone",
+			base: dev ? "" : "/pandaKeys",
 		},
 	},
 	preprocess: vitePreprocess(),
