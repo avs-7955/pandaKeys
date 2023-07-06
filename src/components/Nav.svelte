@@ -1,3 +1,7 @@
+<script>
+	import { base } from "$app/paths"
+</script>
+
 <navbar>
 	<!-- navbar container -->
 	<div
@@ -43,7 +47,7 @@
 						/></g
 					></svg
 				> -->
-				<span><img src="/img/favicon.png" alt="logo" /></span>
+				<span><img src="{base}/img/favicon.png" alt="logo" /></span>
 			</div>
 			<!-- Text -->
 			<div class="text relative text-textColor text-[2rem]/[2.2rem]">
