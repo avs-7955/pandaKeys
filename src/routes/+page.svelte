@@ -61,7 +61,7 @@
 
 <style lang="postcss">
 	:global(html) {
-		background-color: #323437;
+		background-color: #231e20;
 		scrollbar-color: #646669 transparent;
 		scrollbar-width: thin;
 		overflow-y: scroll;
