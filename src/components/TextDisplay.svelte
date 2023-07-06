@@ -165,8 +165,8 @@
 		/>
 		<div
 			class={blur == true && result == false
-				? "blur-sm text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"
-				: "text text-2xl tracking-wider h-44 text-lightGrey select-none flex flex-wrap text-justify"}
+				? "blur-sm text text-2xl tracking-wider h-44 text-mainlight select-none flex flex-wrap text-justify"
+				: "text text-2xl tracking-wider h-44 text-mainlight select-none flex flex-wrap text-justify"}
 			bind:this={text_container}
 		>
 			{#if value.length == 0}
@@ -220,7 +220,7 @@
 	<div class="flex justify-center mt-3">
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<span
-			class=" material-symbols-outlined text-lightGrey mx-auto cursor-pointer hover:text-textColor"
+			class=" material-symbols-outlined text-mainlight mx-auto cursor-pointer hover:text-textColor"
 			on:click={handleReset}
 		>
 			refresh

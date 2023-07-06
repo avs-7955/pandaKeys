@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor/[0.7] text-lightGrey mt-8 md:mt-0"
+	class="container mx-auto w-[60%] p-3 rounded-md bg-optionsBoxColor/[0.7] text-mainlight mt-8 md:mt-0"
 >
 	<div class="flex flex-col md:flex-row justify-center gap-2 lg:gap-4">
 		<div class="flex justify-center gap-4">
@@ -48,7 +48,7 @@
 				><i class="fa-solid fa-quote-left mr-1 text-sm" />quote</button
 			>
 		</div>
-		<div class="hidden md:flex bg-lightGrey rounded-full w-[0.3em]" />
+		<div class="hidden md:flex bg-mainlight rounded-full w-[0.3em]" />
 		<div class="flex justify-center gap-4">
 			<span class="cursor-default">
 				<i class="fa-solid fa-clock text-sm mr-1" />time</span
@@ -82,7 +82,7 @@
 				}}>60</button
 			>
 		</div>
-		<div class="hidden md:flex bg-lightGrey rounded-full w-[0.3em]" />
+		<div class="hidden md:flex bg-mainlight rounded-full w-[0.3em]" />
 		<div class="flex justify-center gap-4">
 			<button
 				class={backSpace

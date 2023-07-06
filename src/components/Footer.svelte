@@ -1,7 +1,7 @@
 <footer>
 	<!-- Container div -->
 	<div class="container mx-auto text-center lg:w-[90%]">
-		<div class="flex text-lightGrey justify-around">
+		<div class="flex text-mainlight justify-around">
 			<a
 				href="https://github.com/avs-7955/monkeytype-clone"
 				class="hidden md:flex hover:text-textColor"
