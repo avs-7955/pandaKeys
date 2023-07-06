@@ -14,7 +14,7 @@
 
 <svelte:head>
 	<!-- Title -->
-	<title>MonkeyType | Typing Test</title>
+	<title>PandaKeys | Typing Test</title>
 	<!-- For Google UI Icons -->
 	<link
 		rel="stylesheet"
@@ -30,11 +30,12 @@
 		referrerpolicy="no-referrer"
 	/>
 	<!-- For Favicon -->
-	<link
+	<!-- <link
 		rel="icon"
 		type="image/svg"
 		href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEKUlEQVR4Xu1bO2gUQRie2YuJEsQLSlARzHUKgnuP5IKNwc5CiLY2RsHCInhYKqioWMkFCwshGgstTUTQzsRKY14nCFZyEUQlIlmQqNHcjvOt2XPfexvMvWZ+CORu9p+d/5vvf+ze/JRUIKqqxmOx1j5GicoIPagQEmeMxAnlf/z/CqZYz0s0wohGKdEYIfP8RvOUseel0q+JQqGghd2YBl2gZnr7YoTl+cRq2ET1OM7XPUF1em929uWI3/o8AVC7u9UYU+42quFOY7mRhRLVBwpTUwWPMftXqVTvCaKwfB1Qez1IlZudnhyyTmxjQCqTPcsHYXzzik4HrC5RBgC0V5gy3qQ7b9tQnepJ0x3KACQz2XH+oa95t95mmcZdoQPfGACk0z39jNJRQYz/a+aqKxgACLb7hv3IDDPTk0mKIkdpaVsUavdXjdVXaIIKSf9/u52jqUzPJU6IiyIygJfQIxyALIJfv4gAIA7QdCY71ywlb+RNZPzBKZXOFnlI7Iqs3BwKmugAEMQA7gHiigSgkRnQvlF3UXfpJ39fFUEamgFjV965TD19YzdZ0FoqhkAC0MguIBlQby6Q2LFMEJgWFjdU5Ie4trPjt6HzpripYr81L6waA26fe28s0ioX7uwkxU9tZF/iBzl1+GvZEPMaBKLJt+1k+Mk2mx7mOXJAI9k93wkAs4qfDq4ZPLZAsnuXXHN5oWbNBAD2+oPtvuBWFAQBQGd8xTYJJj2U/OZalPNOAAlgYVEwePDoF5fhQTrmGADA/aIKAMD9/WTNAERZCBYx/HQruXryo4tJfvMAuNytXeXhhgYgCljWa605vW4BALWxW/BfuAliQphAB4Gy+Lk1UOfZ3GZy82GnMV1dAgBqY4HWyivMz6PoAKjj1xIGAGbGsIKbP/PBhbUZb6wD2KD/HgOwOFDUq/YGC+DvTgnSAXsQbJ0CAPzq+6qmQWcWePxiiyvFWRd//3zRFfDWooNA6LeDNQUAaRB53k9AT2eeh7vAr/0ErHHGEFDar0iqKQBBC4OBXgCEgeYFQJCOBKBazwJelaBkQIBvSheQMUAGQZkFZBr0KIRkHRBSPcpCyKMUlpVgAGuqVgrjAcX5UhQPKEE/Q3npmC9O/B6Gouo4X5Ji3rB1Oe9d0TvBsDc8jTwuAeA/jeGIXK3P/NeMRGKfEMEZIeEPSYl4TNb0N+OYHI8B6A9An4CIMiT2UVl+YlwelgbvRQyE5ePyBgCiN0wABKGOzPL8r5eWk2isdDZNzQmQCjTeWTowM/NqDLba2uYEcQVb76Crc7SJewfRR3w5sHHSpL/RQ6gro01zjB41P2E5k/ZWNw9snjZcgtB8owJhNE8T8khfWR7x6yQPBKDMCLW3S1F4U6XC9qO7hDLeYFEfrfPmEq0t9BO8J/C1HisVvJqlnUH+D18jNN2ysLvBAAAAAElFTkSuQmCC"
-	/>
+	/> -->
+	<link rel="icon" type="image/png" href="/img/favicon.png" />
 </svelte:head>
 
 <div on:mousemove={handleMouseMove}>
