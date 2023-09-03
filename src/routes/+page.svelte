@@ -1,4 +1,5 @@
 <script>
+	import { slide } from 'svelte/transition'
 	import Nav from "../components/Nav.svelte"
 	import TextDisplay from "../components/TextDisplay.svelte"
 	import Footer from "../components/Footer.svelte"
@@ -33,27 +34,34 @@
 <Nav />
 <div class="flex flex-col flex-none h-[60vh] justify-center items-center">
 	<Options on:options={handleOptions} />
-	{#if text_opn == 1}
-		<TextDisplay
-			text={sentences}
-			{timer}
-			{backSpace}
-			on:results={handleResults}
-		/>
-	{:else if text_opn == 3}
-		<TextDisplay
-			text={quotes}
-			{timer}
-			{backSpace}
-			on:results={handleResults}
-		/>
-	{:else}
-		<TextDisplay {text} {timer} {backSpace} on:results={handleResults} />
-	{/if}
+
+	{#key text_opn}
+		<div class="textdisplay_parent" transition:slide>
+			{#if text_opn == 1}
+				<TextDisplay
+					text={sentences}
+					{timer}
+					{backSpace}
+					on:results={handleResults}
+				/>
+			{:else if text_opn == 3}
+				<TextDisplay
+					text={quotes}
+					{timer}
+					{backSpace}
+					on:results={handleResults}
+				/>
+			{:else}
+				<TextDisplay {text} {timer} {backSpace} on:results={handleResults} />
+			{/if}
+			</div>
+		{/key}
 </div>
+
 {#if correct == 0}
 	<div class="mb-36" />
 {/if}
+
 {#if correct > 0}
 	<ResultDisplay {correct} {incorrect} {time_elapsed} />
 {/if}
