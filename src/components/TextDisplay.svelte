@@ -121,6 +121,15 @@
 			time_elapsed: 0,
 		})
 	}
+
+	function format(time) {
+		if (isNaN(time)) return "...";
+
+		const minutes = Math.floor(time / 60);
+		const seconds = Math.floor(time % 60);
+
+		return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+	}
 </script>
 
 <section
@@ -131,21 +140,10 @@
 	<!-- timer container -->
 	<div class="container mx-auto w-[90%] pt-3">
 		<div class="timer-value text-2xl text-yellowAccent">
-			{#if begin == true}
-				{#if seconds > 9}
-					<span>0:{seconds}</span>
-				{:else}
-					<span>0:0{seconds}</span>
-				{/if}
-			{:else if timer == 15}
-				<span>0:{timer}</span>
-			{:else if timer == 30}
-				<span>0:{timer}</span>
-			{:else if timer == 60}
-				<span>0:{timer}</span>
-			{/if}
+			<span>{format(seconds)}</span>
 		</div>
 	</div>
+
 	<div
 		class={blur == false || result == true
 			? "hidden"
@@ -164,9 +162,7 @@
 			style="top:{caret_pos_vertical}px;left:{caret_pos_horizontal}px;"
 		/>
 		<div
-			class={blur == true && result == false
-				? "blur-sm text text-2xl tracking-wider h-44 text-mainlight select-none flex flex-wrap text-justify"
-				: "text text-2xl tracking-wider h-44 text-mainlight select-none flex flex-wrap text-justify"}
+			class="{blur == true && result == false ? 'blur-sm' : '' } transition duration-1000 text text-2xl tracking-wider h-44 text-mainlight select-none flex flex-wrap text-justify"
 			bind:this={text_container}
 		>
 			{#if value.length == 0}
